@@ -7,9 +7,10 @@ public class CountAllSubstrings {
         int result = 0;
         
         for(int i = 1; i < s.length(); i++){
+        	// Keep track of number of time one number repeat
             if(s.charAt(i) == s.charAt(i - 1)){
                 current++;
-            } else {
+            } else { // update result and reset current
                 result += Math.min(current, previous);
                 previous = current;
                 current = 1;
